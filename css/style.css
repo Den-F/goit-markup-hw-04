@@ -8,6 +8,8 @@
   /* Grid */
   --items: 1;
   --indent: 30px;
+  /* --start-color: rgb(243, 255, 13);
+  --end-color: green; */
 }
 
 body {
@@ -44,11 +46,15 @@ p {
 }
 /* НАЧАЛО. Добавляем в секции в которых 
 нужен сброс падиннгов */
-.section.no-padding {
-  padding-bottom: 0;
-  padding-top: 0;
+.section {
+  padding-bottom: 94px;
+  padding-top: 94px;
 }
 /* КОНЕЦ */
+
+img {
+  display: block;
+}
 
 .grid {
   display: flex;
@@ -60,12 +66,12 @@ p {
   margin: calc(var(--indent) / 2);
 }
 /* Style for header */
+.page-header {
+  border-bottom: 1px solid #ececec;
+}
 .page-box {
   display: flex;
   align-items: center;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  border: 1px solid #ececec;
 }
 
 .logo {
@@ -76,15 +82,16 @@ p {
   text-decoration: none;
   color: var(--primari-text-color);
   align-items: center;
-  margin-right: auto;
+  margin-right: 93px;
 }
 .accent {
   color: #2196f3;
 }
 .site-nav {
   display: flex;
-
-  margin-right: 331px;
+}
+.navigation {
+  margin-right: auto;
 }
 
 .site-nav :hover,
@@ -93,6 +100,13 @@ p {
 }
 .contakts-list {
   display: flex;
+  align-items: center;
+}
+.contakts-item,
+.site-nav-item {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .nav-link,
@@ -103,6 +117,16 @@ p {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+}
+.contakt-icon {
+  fill: #757575;
+  margin-right: 10px;
+}
+.contakt-link {
+  display: block;
+}
+.contakt-link:hover .contakt-icon {
+  fill: var(--accent-color);
 }
 .nav-link.current {
   color: var(--accent-color);
@@ -127,15 +151,26 @@ p {
 /* Стили для index.html */
 
 /* Hero */
-
-.container.hero {
+.hero-section {
+  /* background-color: var(--second-background-color); */
+  text-align: center;
   padding-bottom: 200px;
   padding-top: 200px;
 }
-.hero-section {
-  background-color: var(--second-background-color);
-  text-align: center;
+.container-hero {
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hwork4/backgraund-img.jpeg);
+  background-position: center;
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .hero-title {
   font-weight: 900;
   font-size: 44px;
@@ -145,9 +180,10 @@ p {
   text-transform: uppercase;
   color: var(--second-text-color);
   margin-bottom: 30px;
+  padding-top: 200px;
   margin-left: auto;
   margin-right: auto;
-  width: 696px;
+  max-width: 696px;
 }
 /* Button */
 .button-hero {
@@ -175,15 +211,21 @@ p {
 }
 /* END HERO */
 
-/* SECTION */
-/* Секция особенности */
+/* !!!!!!!   SECTION !!!!!!*/
+/*  
+!!!!!!!!!!!Секция особенности!!!!!!!! */
 
 .container.feature {
-  padding-top: 94px;
-  padding-bottom: 47px;
+  /* background-image: repeating-radial-gradient(
+    circle,
+    purple,
+    purple 10px,
+    #4b026f 10px,
+    #4b026f 40px
+  ); */
 }
 
-/* Семантическое скрытие элементов */
+/* !!!!!    Семантическое скрытие элементов !!!!*/
 .visually-hidden {
   position: absolute;
   white-space: nowrap;
@@ -196,6 +238,7 @@ p {
   clip-path: inset(50%);
   margin: -1px;
 }
+/*    !!!!!!!!!!!!!!! */
 .feature-list {
   --items: 4;
   align-items: center;
@@ -224,10 +267,7 @@ p {
 .doing-list {
   --items: 3;
 }
-.container.doing {
-  padding-bottom: 94px;
-  padding-top: 47px;
-}
+
 .doing-title {
   font-weight: 700;
   font-size: 36px;
@@ -237,14 +277,10 @@ p {
   margin-bottom: 50px;
 }
 
-/* Команда */
+/*    !!!!!!Команда !!!!!!*/
 
 .team-list {
   --items: 4;
-}
-.container.team {
-  padding-top: 94px;
-  padding-bottom: 94px;
 }
 
 .team-name {
@@ -253,10 +289,14 @@ p {
 .team-title {
   font-weight: 700;
   font-size: 36px;
-  line-height: 42px;
+  line-height: 1.17;
   text-align: center;
   letter-spacing: 0.03em;
   margin-bottom: 50px;
+}
+.team-list .grid-item {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 .team-subtitle {
   font-weight: 500;
@@ -272,21 +312,76 @@ p {
   line-height: 1.19;
   font-weight: 400;
   letter-spacing: 0.03em;
+  margin-bottom: 16px;
 }
 .team-box {
-  padding: 30px 60px;
+  padding: 20px 30px;
+  text-align: center;
 }
+.team-box-list {
+  display: flex;
+  justify-content: space-evenly;
+}
+.team-box-icon {
+  fill: #afb1b8;
+}
+/* !!!! НАШИ КЛИЕНТЫ !!!! */
+.clients-list {
+  display: flex;
+}
+.clients-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 50px;
+}
+.clients-item {
+  display: block;
+  border: 1px #afb1b8;
+  width: 170px;
+  height: 92px;
+  margin-right: 30px;
+}
+.clients-link {
+  display: block;
+  /* width: 170px;
+  height: 92px; */
+  /* margin-right: 30px; */
+  border: 1px #afb1b8;
+}
+.clients-icon {
+  width: 170px;
+  height: 92px;
+  display: block;
+  margin-right: 30px;
+  fill: #afb1b8;
+  padding: 16px 32px;
+  border: 1px #afb1b8;
+}
+.clients-link:hover .clients-icon {
+  fill: var(--accent-color);
+  border: 1px var(--accent-color);
+}
+/*  !!!!!!    FOOTER    !!!!! */
 
 footer {
   color: var(--primari-background-color);
   background-color: var(--second-background-color);
+  max-width: 1600px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
+/* .footer .container {
+  max-width: 1600px;
+} */
 .footer .logo {
   display: block;
   color: var(--second-text-color);
   margin-bottom: 20px;
-  padding-top: 60px;
 }
 .footer .contakt-link {
   color: rgba(255, 255, 255, 0.6);
@@ -308,16 +403,22 @@ footer {
 .contakt-item:not(:last-child) {
   margin-bottom: 9px;
 }
-.contakt-item.tel {
-  padding-bottom: 60px;
-}
 
-/* Стили для portfolio.html */
+/* !!!!!!!  Стили для portfolio.html !!!!!*/
 
 .container.portfolio-btn {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  background-image: radial-gradient(
+    at center,
+    /* to bottom right, */ #f44336 15%,
+    #09792b 40%,
+    #00b9ff 65%,
+    #ffb800
+  );
+  /* var(--start-color),
+    var(--end-color)
+  ); */
 }
+/* !!!!! BUTTONS !!!!! */
 .btn-list {
   display: flex;
   flex-wrap: nowrap;
@@ -355,14 +456,12 @@ footer {
   background-color: var(--accent-color);
   color: var(--primari-background-color);
 }
+/*  !!!!!!!  PORTFOLIO  !!!! */
 .portfolio-list {
-  --items: 9;
+  --items: 3;
   /* overflow: hidden; */
 }
-.portfolio-item {
-  /* border: 1px solid transparent; */
-  /* box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25)); */
-}
+
 .portfolio-item:hover,
 .portfolio-item:focus {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
