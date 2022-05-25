@@ -246,7 +246,7 @@ img {
 .feature-box {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   background: #f5f4fa;
   border-radius: 4px;
   width: 270px;
@@ -315,7 +315,6 @@ img {
   line-height: 1.19;
   letter-spacing: 0.03em;
   margin-bottom: 10px;
-  margin-top: 30px;
 }
 .team-position {
   color: var(--title-text-color);
@@ -333,6 +332,7 @@ img {
   display: flex;
   justify-content: center;
 }
+
 .team-box-link {
   display: flex;
   justify-content: center;
@@ -346,14 +346,10 @@ img {
 }
 .team-box-link:hover,
 .team-box-link:focus {
-   background-color: #2196f3;
+  background-color: #2196f3;
   color: #ffffff;
 }
-/* .team-box-link:hover .team-box-icon,
-.team-box-link:focus .team-box-icon {
-  /* fill: var(--accent-color); */
- 
-} */
+
 .socials-item-team:not(:last-child) {
   margin-right: 10px;
 }
@@ -411,7 +407,9 @@ footer {
   margin-left: auto;
   margin-right: auto;
 }
-
+.container.footer {
+  display: flex;
+}
 .footer .logo {
   display: block;
   color: var(--second-text-color);
@@ -439,10 +437,7 @@ footer {
   margin-bottom: 9px;
 }
 .footer-box {
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
+  margin-left: 70px;
 }
 .footer-box-link {
   display: flex;
@@ -453,14 +448,15 @@ footer {
   height: 44px;
 
   border-radius: 50%;
-  /* color: #ffffff; */
+  color: #ffffff;
 }
 
 .footer-box-link:hover,
 .footer-box-link:focus {
-   background-color: #2196f3;
+  background-color: #2196f3;
   color: #ffffff;
 }
+
 .footer-box-title {
   font-weight: 700;
   font-size: 14px;
@@ -468,21 +464,23 @@ footer {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #ffffff;
+  margin-bottom: 20px;
+  padding-top: 12px;
 }
 .footer-box-list {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 .footer-box-icon {
-  fill: #ffffff;
+  fill: currentColor;
 }
 .footer-item:not(:last-child) {
   margin-right: 10px;
 }
-.socials {
+/* .socials {
   display: flex;
   justify-content: center;
-}
+} */
 
 /* !!!!!!!  Стили для portfolio.html !!!!!*/
 
