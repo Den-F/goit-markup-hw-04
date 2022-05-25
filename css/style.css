@@ -44,8 +44,7 @@ p {
   padding-right: 15px;
   width: 1200px;
 }
-/* НАЧАЛО. Добавляем в секции в которых 
-нужен сброс падиннгов */
+
 .section {
   padding-bottom: 94px;
   padding-top: 94px;
@@ -54,6 +53,7 @@ p {
 
 img {
   display: block;
+  width: 100%;
 }
 
 .grid {
@@ -153,12 +153,10 @@ img {
 
 /* Hero */
 .hero-section {
-  /* background-color: var(--second-background-color); */
+  background-color: var(--second-background-color);
   text-align: center;
   padding-bottom: 200px;
   padding-top: 200px;
-}
-.container-hero {
   background-image: linear-gradient(
       to right,
       rgba(47, 48, 58, 0.4),
@@ -166,12 +164,11 @@ img {
     ),
     url(../images/hwork4/backgraund-img.jpeg);
   background-position: center;
+  background-repeat: no-repeat;
   max-width: 1600px;
-  height: 600px;
+
   margin-left: auto;
   margin-right: auto;
-  /* padding-bottom: 200px;
-  padding-top: 200px; */
 }
 
 .hero-title {
@@ -183,7 +180,6 @@ img {
   text-transform: uppercase;
   color: var(--second-text-color);
   margin-bottom: 30px;
-  padding-top: 200px;
   margin-left: auto;
   margin-right: auto;
   max-width: 696px;
@@ -247,6 +243,16 @@ img {
   align-items: center;
 }
 
+.feature-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #f5f4fa;
+  border-radius: 4px;
+  width: 270px;
+  height: 120px;
+  margin-bottom: 30px;
+}
 .feature-title {
   font-weight: 700;
   font-size: 14px;
@@ -325,10 +331,34 @@ img {
 }
 .team-box-list {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+}
+.team-box-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+  color: #afb1b8;
+}
+.team-box-link:hover,
+.team-box-link:focus {
+   background-color: #2196f3;
+  color: #ffffff;
+}
+/* .team-box-link:hover .team-box-icon,
+.team-box-link:focus .team-box-icon {
+  /* fill: var(--accent-color); */
+ 
+} */
+.socials-item-team:not(:last-child) {
+  margin-right: 10px;
 }
 .team-box-icon {
-  fill: #afb1b8;
+  fill: currentColor;
 }
 /* !!!! НАШИ КЛИЕНТЫ !!!! */
 .clients-list {
@@ -344,45 +374,44 @@ img {
 }
 .clients-item {
   display: block;
-  border: 1px #afb1b8;
+  /* border: 1px solid #afb1b8; */
   width: 170px;
   height: 92px;
+}
+.clients-item:not(:last-child) {
   margin-right: 30px;
 }
 .clients-link {
-  display: block;
-  /* width: 170px;
-  height: 92px; */
-  /* margin-right: 30px; */
-  border: 1px #afb1b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #afb1b8;
 }
 .clients-icon {
-  width: 170px;
-  height: 92px;
-  display: block;
-  margin-right: 30px;
   fill: #afb1b8;
-  padding: 16px 32px;
-  border: 1px #afb1b8;
 }
-.clients-link:hover .clients-icon {
+.clients-link:hover .clients-icon,
+.clients-link:focus .clients-icon {
   fill: var(--accent-color);
-  border: 1px var(--accent-color);
+}
+.clients-link:hover,
+.clients-link:focus {
+  border: 1px solid var(--accent-color);
 }
 /*  !!!!!!    FOOTER    !!!!! */
 
 footer {
   color: var(--primari-background-color);
   background-color: var(--second-background-color);
-  max-width: 1600px;
+  /* max-width: 1600px; */
   padding-top: 60px;
   padding-bottom: 60px;
   margin-left: auto;
   margin-right: auto;
 }
-/* .footer .container {
-  max-width: 1600px;
-} */
+
 .footer .logo {
   display: block;
   color: var(--second-text-color);
@@ -409,21 +438,54 @@ footer {
 .contakt-item:not(:last-child) {
   margin-bottom: 9px;
 }
+.footer-box {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+.footer-box-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+  /* color: #ffffff; */
+}
+
+.footer-box-link:hover,
+.footer-box-link:focus {
+   background-color: #2196f3;
+  color: #ffffff;
+}
+.footer-box-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.footer-box-list {
+  display: flex;
+  justify-content: space-evenly;
+}
+.footer-box-icon {
+  fill: #ffffff;
+}
+.footer-item:not(:last-child) {
+  margin-right: 10px;
+}
+.socials {
+  display: flex;
+  justify-content: center;
+}
 
 /* !!!!!!!  Стили для portfolio.html !!!!!*/
 
-.container.portfolio-btn {
-  background-image: radial-gradient(
-    at center,
-    /* to bottom right, */ #f44336 15%,
-    #09792b 40%,
-    #00b9ff 65%,
-    #ffb800
-  );
-  /* var(--start-color),
-    var(--end-color)
-  ); */
-}
 /* !!!!! BUTTONS !!!!! */
 .btn-list {
   display: flex;
@@ -461,17 +523,24 @@ footer {
 .btn-filter:focus {
   background-color: var(--accent-color);
   color: var(--primari-background-color);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-/*  !!!!!!!  PORTFOLIO  !!!! */
+/*  !!!!!!!  
+                   PORTFOLIO  !!!! */
 .portfolio-list {
   --items: 3;
   /* overflow: hidden; */
 }
-
-.portfolio-item:hover,
-.portfolio-item:focus {
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+.link-portfolio-blok {
+  display: block;
 }
+.link-portfolio-blok:hover,
+.link-portfolio-blok:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .portfolio-img-box {
   padding: 20px 24px;
   border-right: 1px solid #eeeeee;
